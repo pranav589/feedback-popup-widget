@@ -65,6 +65,7 @@ function Widget({ projectId }) {
     try {
       const projectUrlObj = new URL(projectUrl);
       const currentUrlObj = new URL(currentUrl);
+      console.log(projectUrlObj, currentUrlObj);
       // Compare only the domain (hostname), ignoring paths
       if (projectUrlObj.hostname === currentUrlObj.hostname) {
         setIsSameDomain(true); // Domains match
