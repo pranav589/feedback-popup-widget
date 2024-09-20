@@ -62,6 +62,7 @@ function Widget({ projectId }) {
   }, [projectId]);
 
   const compareDomains = (projectUrl, currentUrl) => {
+    console.log(projectUrl, currentUrl);
     try {
       const projectUrlObj = new URL(projectUrl);
       const currentUrlObj = new URL(currentUrl);
