@@ -64,25 +64,11 @@ function Widget({ projectId }) {
   const compareDomains = (projectUrl, currentUrl) => {
     console.log({ projectUrl, currentUrl });
     try {
-      // If projectUrl is relative, construct it with the current origin
-      // const fullProjectUrl = projectUrl.startsWith("http")
-      //   ? projectUrl
-      //   : new URL(projectUrl, window.location.origin).href;
-      // console.log({ fullProjectUrl });
-
-      // Construct the current URL object
-      const currentUrlObj = new URL(currentUrl);
-
-      // Now we can safely create the project URL object
       const projectUrlObj = new URL(projectUrl);
-
-      console.log({ currentUrlObj, projectUrlObj });
-
-      // Compare only the domain (hostname), ignoring paths
-      if (projectUrlObj.hostname === currentUrlObj.hostname) {
-        setIsSameDomain(true); // Domains match
-      } else {
-        setIsSameDomain(false); // Domains do not match
+      const currentUrlObj = new URL(currentUrl);
+      console.log({ projectUrlObj, currentUrlObj });
+      if (projectUrlObj.origin === currentUrlObj.origin) {
+        setIsSameDomain(true);
       }
     } catch (error) {
       console.error("Error comparing domains:", error);
