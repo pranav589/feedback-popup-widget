@@ -62,9 +62,11 @@ function Widget({ projectId }) {
   }, [projectId]);
 
   const compareDomains = (projectUrl, currentUrl) => {
+    console.log({ projectUrl, currentUrl });
     try {
       const projectUrlObj = new URL(projectUrl);
       const currentUrlObj = new URL(currentUrl);
+      console.log({ projectUrlObj, currentUrlObj });
       if (projectUrlObj.origin === currentUrlObj.origin) {
         setIsSameDomain(true);
       } else {
