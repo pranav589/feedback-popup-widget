@@ -1,3 +1,3 @@
 import WidgetWebComponent from "./web-component";
 
-customElements.define("my-widget", WidgetWebComponent);
+customElements.define("feedback-collection-popup", WidgetWebComponent);

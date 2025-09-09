@@ -4,7 +4,7 @@ import Widget from "./components/Widget";
 function App() {
   return (
     <>
-      <Widget projectId="1" />
+      <Widget projectId="" />
     </>
   );
 }
